@@ -21,9 +21,6 @@ services:
         fromDatabase:
           name: mini-meeting-db
           property: connectionString
-      - key: REDIS_URL
-        fromRedis:
-          name: mini-meeting-redis
       - key: REDIS_HOST
         sync: false
       - key: REDIS_PORT
