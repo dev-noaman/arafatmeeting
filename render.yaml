@@ -22,17 +22,21 @@ services:
           name: mini-meeting-db
           property: connectionString
       - key: REDIS_HOST
-        fromRedis
-        property: host
+        fromRedis:
+          name: mini-meeting-redis
+          property: host
       - key: REDIS_PORT
-        fromRedis
-        property: port
+        fromRedis:
+          name: mini-meeting-redis
+          property: port
       - key: REDIS_USERNAME
-        fromRedis
-        property: username
+        fromRedis:
+          name: mini-meeting-redis
+          property: username
       - key: REDIS_PASSWORD
-        fromRedis
-        property: password
+        fromRedis:
+          name: mini-meeting-redis
+          property: password
       - key: LIVEKIT_API_KEY
         sync: false
       - key: LIVEKIT_API_SECRET
