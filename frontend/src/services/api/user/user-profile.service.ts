@@ -21,7 +21,7 @@ export const userProfileService = {
   },
 
   updateCurrentUser: async (updateData: UpdateUserRequest): Promise<User> => {
-    const { data, error } = await insforge.auth.setProfile({ name: updateData.name });
+    const { error } = await insforge.auth.setProfile({ name: updateData.name });
     if (error) throw new Error(error.message);
     // Re-fetch user to get updated state
     const { data: freshData, error: freshError } = await insforge.auth.getCurrentUser();

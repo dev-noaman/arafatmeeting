@@ -38,13 +38,14 @@ export const userAdminService = {
   getUserById: async (id: string): Promise<User> => {
     const { data, error } = await insforge.auth.getProfile(id);
     if (error) throw new Error(error.message);
+    const u = data! as UserSchema;
     return {
-      id: data!.id,
-      email: "",
-      name: data!.name || "",
+      id: u.id,
+      email: u.email || "",
+      name: u.profile?.name || "",
       role: "user",
-      provider: "local",
-      created_at: data!.createdAt || "",
+      provider: (u.providers?.[0] as User["provider"]) || "local",
+      created_at: u.createdAt || "",
     };
   },
 

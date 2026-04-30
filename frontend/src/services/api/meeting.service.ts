@@ -8,7 +8,7 @@ import type {
 import apiClient from "./client";
 
 export const meetingService = {
-  createMeeting: async (attendees?: string[]): Promise<Meeting> => {
+  createMeeting: async (_attendees?: string[]): Promise<Meeting> => {
     const { data: userData, error: userError } = await insforge.auth.getCurrentUser();
     if (userError || !userData.user) throw new Error("Not authenticated");
 

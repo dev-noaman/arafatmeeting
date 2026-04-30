@@ -9,7 +9,7 @@ import type { ApiError } from "../../types/auth.types";
  * Handles modal state, loading, and delete operation
  */
 export function useDeleteUser(
-  currentUserId: number | undefined,
+  currentUserId: string | undefined,
   setError: (msg: string) => void,
   refetch: () => Promise<void>,
 ) {

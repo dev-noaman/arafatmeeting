@@ -16,7 +16,7 @@ function mapUser(u: UserSchema): User {
 
 export const createAuthActions = (
   set: (partial: Partial<{ user: User | null; isAuthenticated: boolean; isLoading: boolean }>) => void,
-  get: () => { user: User | null; isAuthenticated: boolean; isLoading: boolean },
+  _get: () => { user: User | null; isAuthenticated: boolean; isLoading: boolean },
 ): AuthActions => ({
   setUser: (user: User | null) => {
     set({ user, isAuthenticated: !!user });

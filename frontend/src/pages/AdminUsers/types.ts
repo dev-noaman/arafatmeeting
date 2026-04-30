@@ -19,13 +19,13 @@ export interface SearchBarProps {
 
 export interface UsersTableProps {
   users: User[];
-  currentUserId?: number;
+  currentUserId?: string;
   onDeleteUser: (user: User) => void;
 }
 
 export interface UserRowProps {
   user: User;
-  currentUserId?: number;
+  currentUserId?: string;
   onDeleteClick: (user: User) => void;
 }
 
