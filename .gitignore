@@ -63,3 +63,4 @@ frontend/.cache
 .trae
 .windsurf
 mini-meeting-infra.txt
+backend/insforge_csrf_token=test
