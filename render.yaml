@@ -21,22 +21,17 @@ services:
         fromDatabase:
           name: mini-meeting-db
           property: connectionString
+      - key: REDIS_URL
+        fromRedis:
+          name: mini-meeting-redis
       - key: REDIS_HOST
-        fromRedis:
-          name: mini-meeting-redis
-          property: host
+        sync: false
       - key: REDIS_PORT
-        fromRedis:
-          name: mini-meeting-redis
-          property: port
+        sync: false
       - key: REDIS_USERNAME
-        fromRedis:
-          name: mini-meeting-redis
-          property: username
+        sync: false
       - key: REDIS_PASSWORD
-        fromRedis:
-          name: mini-meeting-redis
-          property: password
+        sync: false
       - key: LIVEKIT_API_KEY
         sync: false
       - key: LIVEKIT_API_SECRET
@@ -69,8 +64,3 @@ databases:
     plan: free
     region: oregon
     ipAllowList: []
-
-redis:
-  - name: mini-meeting-redis
-    plan: free
-    region: oregon
