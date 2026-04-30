@@ -1,0 +1,58 @@
+export interface SummarizerSession {
+  id: number;
+  status: "STARTED" | "CAPTURED" | "TRANSCRIBED" | "NORMALIZED" | "SUMMARIZED";
+  error: string | null;
+  transcript: string | null;
+  summary: string | null;
+  started_at: string;
+  ended_at: string | null;
+}
+
+export interface SummarizerSessionList {
+  id: number;
+  status: "STARTED" | "CAPTURED" | "TRANSCRIBED" | "NORMALIZED" | "SUMMARIZED";
+  error: string | null;
+  started_at: string;
+}
+
+export interface User {
+  id: string;
+  email: string;
+  name: string;
+  role: "user" | "admin";
+  provider: "local" | "google" | "github";
+  avatar_url?: string;
+  created_at: string;
+}
+export interface UserResponse {
+  data: User;
+}
+
+export interface PaginatedUsersResponse {
+  data: User[];
+  total: number;
+  page: number;
+  page_size: number;
+  total_pages: number;
+}
+
+
+export interface PaginatedSessionsResponse {
+  data: SummarizerSessionList[];
+  total: number;
+  page: number;
+  page_size: number;
+  total_pages: number;
+}
+
+export interface UserDeleteResponse {
+  message: string;
+}
+
+export interface UpdateUserRequest {
+  name?: string;
+}
+
+export interface UserUpdateResponse {
+  data: User;
+}
